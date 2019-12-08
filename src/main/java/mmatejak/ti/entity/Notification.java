@@ -4,11 +4,10 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
@@ -32,12 +31,9 @@ public class Notification {
     @Column
     private String description;
 
-    @Column
-    private Long serviceId;
+    @ManyToOne
+    private Client clientId;
 
-    @OneToOne
-    private Client client;
-
-    @OneToOne
-    private Service service;
+    @ManyToOne
+    private Service serviceId;
 }
