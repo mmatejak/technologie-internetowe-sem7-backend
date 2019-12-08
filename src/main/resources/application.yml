@@ -1,0 +1,21 @@
+spring:
+  h2:
+    console:
+      enabled: false
+  datasource:
+    url: jdbc:h2:file:~/mmatejakti;AUTO_SERVER=TRUE
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    platform: h2
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: public
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
