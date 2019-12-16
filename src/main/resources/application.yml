@@ -1,7 +1,11 @@
 spring:
   h2:
     console:
-      enabled: false
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: true
+        web-allow-others: true
   datasource:
     url: jdbc:h2:file:~/mmatejakti;AUTO_SERVER=TRUE
     username: sa
@@ -9,13 +13,16 @@ spring:
     driverClassName: org.h2.Driver
     platform: h2
     initialization-mode: always
+#    initialization-mode: never
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     hibernate:
+#      It's some problem with cascade drop db
+#      ddl-auto: create-drop
       ddl-auto: update
     properties:
       hibernate:
         default_schema: public
         dialect: org.hibernate.dialect.H2Dialect
-        format_sql: true
+        format_sql: false

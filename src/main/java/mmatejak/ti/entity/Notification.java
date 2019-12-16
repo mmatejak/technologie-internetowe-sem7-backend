@@ -1,29 +1,35 @@
 package mmatejak.ti.entity;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 @Entity
-@Table
+@Table(name = "NOTIFICATION")
 public class Notification {
 
     @Id
-    @Column
-    private long notificationId;
+    @GeneratedValue
+    private Long id;
 
-    @Column
-    private LocalDateTime notificationDateTime;
+    @CreatedDate
+    private LocalDateTime creationDateTime;
+
+    @LastModifiedDate
+    private LocalDateTime updateDateTime;
 
     @Column
     private LocalDateTime deliveryTime;
@@ -31,9 +37,11 @@ public class Notification {
     @Column
     private String description;
 
-    @ManyToOne
-    private Client clientId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CLIENT_ID")
+    private Client client;
 
-    @ManyToOne
-    private Service serviceId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SERVICE_ID")
+    private Service service;
 }

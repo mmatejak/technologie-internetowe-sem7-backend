@@ -1,24 +1,32 @@
 package mmatejak.ti.entity;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 @Entity
-@Table
+@Table(name = "SERVICE")
 public class Service {
 
     @Id
-    @Column
-    private long serviceId;
+    @GeneratedValue
+    private Long id;
+
+    @CreatedDate
+    private LocalDateTime creationDateTime;
+
+    @LastModifiedDate
+    private LocalDateTime updateDateTime;
 
     @Column
     private String type;
