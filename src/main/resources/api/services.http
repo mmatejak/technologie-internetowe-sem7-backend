@@ -1,0 +1,4 @@
+### Get all notifications
+GET {{host}}/services/all
+
+###

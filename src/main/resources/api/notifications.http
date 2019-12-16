@@ -10,15 +10,18 @@ Content-Type: application/json
 
 {
   "description": "Mam problem",
-  "client": {
-    "email": "qwe@wp.pl",
+  "service": "CZYSZCZENIE_PC",
+  "clientDto": {
+    "email": "qwe1@wp.pl",
     "name": "Jurij",
     "surname": "Owsienko",
     "phoneNumber": "123123123"
   },
-  "service": {
-    "type": "CZYSZCZENIE_PC",
-    "price": 100
+  "addressDto": {
+    "postCode": "123123",
+    "town": "Radom",
+    "street": "Koniec",
+    "streetNumber": "123"
   }
 }
 
