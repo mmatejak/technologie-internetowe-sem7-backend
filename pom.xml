@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>mmatejak</groupId>
-    <artifactId>ti</artifactId>
+    <artifactId>technologie-internetowe-set7-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Technologie Internetowe SEM7 Mariusz Matejak</name>
     <description>Projekt aplikacji dla serwisu komputerowego</description>
