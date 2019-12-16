@@ -1,0 +1,18 @@
+### Get all clients
+GET {{host}}/clients/all
+
+### Add client
+POST {{host}}/clients/add
+Content-Type: application/json
+
+{
+  "email": "qwe@wp.pl",
+  "name": "Jurij",
+  "surname": "Owsienko",
+  "phoneNumber": "123123123",
+  "address": {
+
+  }
+}
+
+###

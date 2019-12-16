@@ -11,8 +11,8 @@
     <groupId>mmatejak</groupId>
     <artifactId>ti</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Technologie Internetowe SEM7</name>
-    <description>Demo project for Spring Boot</description>
+    <name>Technologie Internetowe SEM7 Mariusz Matejak</name>
+    <description>Projekt aplikacji dla serwisu komputerowego</description>
 
     <properties>
         <java.version>11</java.version>

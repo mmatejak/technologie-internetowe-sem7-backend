@@ -1,27 +1,36 @@
 package mmatejak.ti.entity;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 @Entity
-@Table
+@Table(name = "CLIENT")
 public class Client {
 
     @Id
-    @Column
-    private long clientId;
+    @GeneratedValue
+    private Long id;
+
+    @CreatedDate
+    private LocalDateTime creationDateTime;
+
+    @LastModifiedDate
+    private LocalDateTime updateDateTime;
 
     @Column
     private String name;
@@ -36,6 +45,7 @@ public class Client {
     @Email
     private String email;
 
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ADDRESS_ID")
     private Address address;
 }

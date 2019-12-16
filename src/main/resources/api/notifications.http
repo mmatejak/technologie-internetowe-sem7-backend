@@ -1,0 +1,25 @@
+### Get all notifications
+GET {{host}}/notifications/all
+
+### Get notification id
+GET {{host}}/notifications/all
+
+### Add notification
+POST {{host}}/notifications/add
+Content-Type: application/json
+
+{
+  "description": "Mam problem",
+  "client": {
+    "email": "qwe@wp.pl",
+    "name": "Jurij",
+    "surname": "Owsienko",
+    "phoneNumber": "123123123"
+  },
+  "service": {
+    "type": "CZYSZCZENIE_PC",
+    "price": 100
+  }
+}
+
+###

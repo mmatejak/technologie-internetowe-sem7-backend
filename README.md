@@ -50,7 +50,7 @@
         street_number varchar(255),
         town varchar(255),
         primary key (address_id)
-    )
+    );
     
     create table public.client (
        client_id bigint not null,
@@ -60,7 +60,7 @@
         surname varchar(255),
         address_address_id bigint,
         primary key (client_id)
-    )
+    );
     
     create table public.notification (
        notification_id bigint not null,
@@ -70,27 +70,27 @@
         client_id_client_id bigint,
         service_id_service_id bigint,
         primary key (notification_id)
-    )
+    );
     
     create table public.service (
        service_id bigint not null,
         price bigint,
         type varchar(255),
         primary key (service_id)
-    )
+    );
     
     alter table public.client 
        add constraint FKe4ci7dwuckyom9m2v9l1wd3c1 
        foreign key (address_address_id) 
-       references public.address
+       references public.address;
     
     alter table public.notification 
        add constraint FKiw0ftfusw86xj9649nx2fmfjt 
        foreign key (client_id_client_id) 
-       references public.client
+       references public.client;
     
     alter table public.notification 
        add constraint FKaecl81s4cjffmtckj2st8af8 
        foreign key (service_id_service_id) 
-       references public.service
+       references public.service;
 ```
