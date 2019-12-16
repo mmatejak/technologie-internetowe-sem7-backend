@@ -2,8 +2,10 @@ package mmatejak.ti.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import mmatejak.ti.dto.NotificationDto;
 import mmatejak.ti.entity.Notification;
 import mmatejak.ti.repository.NotificationRepository;
+import mmatejak.ti.service.NotificationManagement;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +20,7 @@ import java.util.List;
 @RequestMapping("/notifications")
 public class NotificationController {
 
+    private final NotificationManagement notificationManagement;
     private final NotificationRepository notificationRepository;
 
     @GetMapping("/all")
@@ -26,7 +29,7 @@ public class NotificationController {
     }
 
     @PostMapping("/add")
-    public void addNotification(@RequestBody Notification notification) {
-        notificationRepository.save(notification);
+    public void addNotification(@RequestBody NotificationDto notificationDto) {
+        notificationManagement.addNewNotification(notificationDto);
     }
 }
