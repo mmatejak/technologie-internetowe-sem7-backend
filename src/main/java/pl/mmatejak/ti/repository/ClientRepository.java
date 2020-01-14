@@ -1,6 +1,6 @@
-package mmatejak.ti.repository;
+package pl.mmatejak.ti.repository;
 
-import mmatejak.ti.entity.Client;
+import pl.mmatejak.ti.entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -34,7 +34,7 @@
 
 #####Service:
 
->Zawiera dane dotyczące usług oferowanych przez serwis komputerowych:
+>Zawiera dane dotyczące oferowanych usług:
 
 - id usługi
 - nazwe usługi

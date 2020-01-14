@@ -1,4 +1,4 @@
-package mmatejak.ti;
+package pl.mmatejak.ti;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

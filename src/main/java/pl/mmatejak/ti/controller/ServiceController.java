@@ -1,9 +1,9 @@
-package mmatejak.ti.controller;
+package pl.mmatejak.ti.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import mmatejak.ti.entity.Service;
-import mmatejak.ti.repository.ServiceRepository;
+import pl.mmatejak.ti.entity.Service;
+import pl.mmatejak.ti.repository.ServiceRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
