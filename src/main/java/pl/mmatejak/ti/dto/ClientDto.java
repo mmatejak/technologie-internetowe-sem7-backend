@@ -1,4 +1,4 @@
-package mmatejak.ti.dto;
+package pl.mmatejak.ti.dto;
 
 import lombok.Value;
 

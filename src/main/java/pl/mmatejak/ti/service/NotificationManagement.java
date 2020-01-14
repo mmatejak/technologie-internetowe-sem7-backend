@@ -1,13 +1,13 @@
-package mmatejak.ti.service;
+package pl.mmatejak.ti.service;
 
 import lombok.AllArgsConstructor;
-import mmatejak.ti.dto.NotificationDto;
-import mmatejak.ti.entity.Address;
-import mmatejak.ti.entity.Client;
-import mmatejak.ti.entity.Notification;
-import mmatejak.ti.repository.ClientRepository;
-import mmatejak.ti.repository.NotificationRepository;
-import mmatejak.ti.repository.ServiceRepository;
+import pl.mmatejak.ti.dto.NotificationDto;
+import pl.mmatejak.ti.entity.Address;
+import pl.mmatejak.ti.entity.Client;
+import pl.mmatejak.ti.entity.Notification;
+import pl.mmatejak.ti.repository.ServiceRepository;
+import pl.mmatejak.ti.repository.ClientRepository;
+import pl.mmatejak.ti.repository.NotificationRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +31,7 @@ public class NotificationManagement {
             notification.setClient(findedClient);
         }
         notification.setService(serviceRepository.findByType(notificationDto.getService()));
+        notification.setDescription(notificationDto.getDescription());
         return notification;
     }
 

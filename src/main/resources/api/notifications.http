@@ -1,16 +1,13 @@
 ### Get all notifications
-GET {{host}}/notifications/all
-
-### Get notification id
-GET {{host}}/notifications/all
+GET {{host}}/api/notifications/all
 
 ### Add notification
-POST {{host}}/notifications/add
+POST {{host}}/api/notifications/add
 Content-Type: application/json
 
 {
   "description": "Mam problem",
-  "service": "CZYSZCZENIE_PC",
+  "service": "WEZWANIE_ASSISTANCE",
   "clientDto": {
     "email": "qwe1@wp.pl",
     "name": "Jurij",

@@ -1,4 +1,4 @@
-package mmatejak.ti.entity;
+package pl.mmatejak.ti.entity;
 
 import lombok.Getter;
 import lombok.Setter;

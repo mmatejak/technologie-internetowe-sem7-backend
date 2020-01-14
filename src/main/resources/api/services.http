@@ -1,4 +1,4 @@
 ### Get all notifications
-GET {{host}}/services/all
+GET {{host}}/api/services/all
 
 ###
