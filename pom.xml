@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.mmatejak.ti</groupId>
-    <artifactId>technologie-internetowe-set7-backend</artifactId>
+    <artifactId>technologie-internetowe-sem7-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Technologie Internetowe SEM7 Mariusz Matejak</name>
     <description>Projekt aplikacji dla serwisu komputerowego</description>
