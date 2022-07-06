@@ -10,19 +10,20 @@ spring:
         web-allow-others: true
   datasource:
     url: jdbc:h2:file:~/mmatejakti;AUTO_SERVER=TRUE
+#    url: jdbc:h2:mem:mmatejakti
     username: sa
     password: password
     driverClassName: org.h2.Driver
-    platform: h2
-    initialization-mode: NEVER
-#    initialization-mode: never
+  sql:
+    init:
+      mode: never
+      platform: h2
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
+    defer-datasource-initialization: true
     hibernate:
-#      It's some problem with cascade drop db
-#      ddl-auto: create-drop
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
         default_schema: public
