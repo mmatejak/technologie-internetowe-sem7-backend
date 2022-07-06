@@ -1,12 +1,4 @@
 package pl.mmatejak.ti.dto;
 
-import lombok.Value;
-
-@Value
-public class AddressDto {
-
-    private String postCode;
-    private String town;
-    private String street;
-    private String streetNumber;
+public record AddressDto(String postCode, String town, String street, String streetNumber) {
 }

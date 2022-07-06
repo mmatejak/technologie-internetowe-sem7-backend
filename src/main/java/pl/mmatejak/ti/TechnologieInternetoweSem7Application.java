@@ -13,5 +13,4 @@ public class TechnologieInternetoweSem7Application {
     public static void main(String[] args) {
         SpringApplication.run(TechnologieInternetoweSem7Application.class, args);
     }
-
 }

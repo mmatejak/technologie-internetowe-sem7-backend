@@ -24,32 +24,32 @@ public class NotificationManagement {
 
     private Notification prepareNewNotification(NotificationDto notificationDto) {
         Notification notification = new Notification();
-        Client findedClient = clientRepository.findByEmail(notificationDto.getClientDto().getEmail());
+        Client findedClient = clientRepository.findByEmail(notificationDto.clientDto().email());
         if (findedClient == null) {
             prepareNewClient(notificationDto);
         } else {
             notification.setClient(findedClient);
         }
-        notification.setService(serviceRepository.findByType(notificationDto.getService()));
-        notification.setDescription(notificationDto.getDescription());
+        notification.setService(serviceRepository.findByType(notificationDto.service()));
+        notification.setDescription(notificationDto.description());
         return notification;
     }
 
     private void prepareNewClient(NotificationDto notificationDto) {
         Client client = new Client();
-        client.setName(notificationDto.getClientDto().getName());
-        client.setSurname(notificationDto.getClientDto().getSurname());
-        client.setEmail(notificationDto.getClientDto().getEmail());
-        client.setPhoneNumber(notificationDto.getClientDto().getPhoneNumber());
+        client.setName(notificationDto.clientDto().name());
+        client.setSurname(notificationDto.clientDto().surname());
+        client.setEmail(notificationDto.clientDto().email());
+        client.setPhoneNumber(notificationDto.clientDto().phoneNumber());
         client.setAddress(prepareNewAddress(notificationDto));
     }
 
     private Address prepareNewAddress(NotificationDto notificationDto) {
         Address address = new Address();
-        address.setPostCode(notificationDto.getAddressDto().getPostCode());
-        address.setTown(notificationDto.getAddressDto().getTown());
-        address.setStreet(notificationDto.getAddressDto().getStreet());
-        address.setStreetNumber(notificationDto.getAddressDto().getStreetNumber());
+        address.setPostCode(notificationDto.addressDto().postCode());
+        address.setTown(notificationDto.addressDto().town());
+        address.setStreet(notificationDto.addressDto().street());
+        address.setStreetNumber(notificationDto.addressDto().streetNumber());
         return address;
     }
 }

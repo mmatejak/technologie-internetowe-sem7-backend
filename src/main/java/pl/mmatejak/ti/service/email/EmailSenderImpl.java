@@ -28,9 +28,9 @@ public class EmailSenderImpl implements EmailSender {
         MimeMessage mail = javaMailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mail, true);
-            helper.setTo(notificationDto.getClientDto().getEmail());
+            helper.setTo(notificationDto.clientDto().email());
             helper.setFrom("assistance@google.com");
-            helper.setSubject(notificationDto.getService());
+            helper.setSubject(notificationDto.service());
             helper.setText(notificationDto.toString());
         } catch (MessagingException e) {
             throw new UnsupportedOperationException();
