@@ -1,17 +1,17 @@
 package pl.mmatejak.ti.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import pl.mmatejak.ti.dto.NotificationDto;
-import pl.mmatejak.ti.entity.Address;
-import pl.mmatejak.ti.entity.Client;
-import pl.mmatejak.ti.entity.Notification;
-import pl.mmatejak.ti.repository.ServiceRepository;
+import pl.mmatejak.ti.entity.AddressEntity;
+import pl.mmatejak.ti.entity.ClientEntity;
+import pl.mmatejak.ti.entity.NotificationEntity;
 import pl.mmatejak.ti.repository.ClientRepository;
 import pl.mmatejak.ti.repository.NotificationRepository;
-import org.springframework.stereotype.Service;
+import pl.mmatejak.ti.repository.ServiceRepository;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class NotificationManagement {
 
     private final ClientRepository clientRepository;
@@ -22,34 +22,34 @@ public class NotificationManagement {
         notificationRepository.save(prepareNewNotification(notificationDto));
     }
 
-    private Notification prepareNewNotification(NotificationDto notificationDto) {
-        Notification notification = new Notification();
-        Client findedClient = clientRepository.findByEmail(notificationDto.clientDto().email());
-        if (findedClient == null) {
+    private NotificationEntity prepareNewNotification(NotificationDto notificationDto) {
+        NotificationEntity notificationEntity = new NotificationEntity();
+        ClientEntity foundedClientEntity = clientRepository.findByEmail(notificationDto.client().email());
+        if (foundedClientEntity == null) {
             prepareNewClient(notificationDto);
         } else {
-            notification.setClient(findedClient);
+            notificationEntity.setClientEntity(foundedClientEntity);
         }
-        notification.setService(serviceRepository.findByType(notificationDto.service()));
-        notification.setDescription(notificationDto.description());
-        return notification;
+        notificationEntity.setServiceEntity(serviceRepository.findByType(notificationDto.service()));
+        notificationEntity.setDescription(notificationDto.description());
+        return notificationEntity;
     }
 
     private void prepareNewClient(NotificationDto notificationDto) {
-        Client client = new Client();
-        client.setName(notificationDto.clientDto().name());
-        client.setSurname(notificationDto.clientDto().surname());
-        client.setEmail(notificationDto.clientDto().email());
-        client.setPhoneNumber(notificationDto.clientDto().phoneNumber());
-        client.setAddress(prepareNewAddress(notificationDto));
+        ClientEntity clientEntity = new ClientEntity();
+        clientEntity.setName(notificationDto.client().name());
+        clientEntity.setSurname(notificationDto.client().surname());
+        clientEntity.setEmail(notificationDto.client().email());
+        clientEntity.setPhoneNumber(notificationDto.client().phoneNumber());
+        clientEntity.setAddressEntity(prepareNewAddress(notificationDto));
     }
 
-    private Address prepareNewAddress(NotificationDto notificationDto) {
-        Address address = new Address();
-        address.setPostCode(notificationDto.addressDto().postCode());
-        address.setTown(notificationDto.addressDto().town());
-        address.setStreet(notificationDto.addressDto().street());
-        address.setStreetNumber(notificationDto.addressDto().streetNumber());
-        return address;
+    private AddressEntity prepareNewAddress(NotificationDto notificationDto) {
+        AddressEntity addressEntity = new AddressEntity();
+        addressEntity.setPostCode(notificationDto.address().postCode());
+        addressEntity.setTown(notificationDto.address().town());
+        addressEntity.setStreet(notificationDto.address().street());
+        addressEntity.setStreetNumber(notificationDto.address().streetNumber());
+        return addressEntity;
     }
 }

@@ -1,17 +1,16 @@
 package pl.mmatejak.ti.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "ADDRESS")
-public class Address extends AbstractEntity {
+public class AddressEntity extends AbstractEntity {
 
     @Column
     private String postCode;

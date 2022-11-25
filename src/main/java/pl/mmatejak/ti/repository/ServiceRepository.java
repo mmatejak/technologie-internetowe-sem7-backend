@@ -1,11 +1,11 @@
 package pl.mmatejak.ti.repository;
 
-import pl.mmatejak.ti.entity.Service;
+import pl.mmatejak.ti.entity.ServiceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ServiceRepository extends JpaRepository<Service, Long> {
+public interface ServiceRepository extends JpaRepository<ServiceEntity, Long> {
 
-    Service findByType(String type);
+    ServiceEntity findByType(String type);
 }

@@ -1,20 +1,20 @@
 ### Get all notifications
 GET {{host}}/api/notifications/all
 
-### Add notification
+### Add notificationEntity
 POST {{host}}/api/notifications/add
 Content-Type: application/json
 
 {
   "description": "Mam problem",
   "service": "WEZWANIE_ASSISTANCE",
-  "clientDto": {
+  "client": {
     "email": "qwe1@wp.pl",
     "name": "Jurij",
     "surname": "Owsienko",
     "phoneNumber": "123123123"
   },
-  "addressDto": {
+  "address": {
     "postCode": "123123",
     "town": "Radom",
     "street": "Koniec",

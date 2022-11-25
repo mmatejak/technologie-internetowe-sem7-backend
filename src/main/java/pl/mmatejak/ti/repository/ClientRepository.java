@@ -1,11 +1,11 @@
 package pl.mmatejak.ti.repository;
 
-import pl.mmatejak.ti.entity.Client;
+import pl.mmatejak.ti.entity.ClientEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClientRepository extends JpaRepository<Client, Long> {
+public interface ClientRepository extends JpaRepository<ClientEntity, Long> {
 
-    Client findByEmail(String email);
+    ClientEntity findByEmail(String email);
 }
