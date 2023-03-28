@@ -9,5 +9,8 @@ import pl.mmatejak.ti.dto.NotificationDto;
  */
 public interface EmailSender {
 
+    /**
+     * TODO: Write javadoc
+     */
     void sendConfirmEmail(NotificationDto notificationDto);
 }

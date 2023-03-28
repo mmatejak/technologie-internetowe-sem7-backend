@@ -10,18 +10,38 @@ import pl.mmatejak.ti.repository.ClientRepository;
 import pl.mmatejak.ti.repository.NotificationRepository;
 import pl.mmatejak.ti.repository.ServiceRepository;
 
+/**
+ * TODO: Write javadoc
+ */
 @Service
 @RequiredArgsConstructor
 public class NotificationManagement {
 
+    /**
+     * TODO: Write javadoc
+     */
     private final ClientRepository clientRepository;
+
+    /**
+     * TODO: Write javadoc
+     */
     private final NotificationRepository notificationRepository;
+
+    /**
+     * TODO: Write javadoc
+     */
     private final ServiceRepository serviceRepository;
 
+    /**
+     * TODO: Write javadoc
+     */
     public void addNewNotification(NotificationDto notificationDto) {
         notificationRepository.save(prepareNewNotification(notificationDto));
     }
 
+    /**
+     * TODO: Write javadoc
+     */
     private NotificationEntity prepareNewNotification(NotificationDto notificationDto) {
         NotificationEntity notificationEntity = new NotificationEntity();
         ClientEntity foundedClientEntity = clientRepository.findByEmail(notificationDto.client().email());
@@ -35,6 +55,9 @@ public class NotificationManagement {
         return notificationEntity;
     }
 
+    /**
+     * TODO: Write javadoc
+     */
     private void prepareNewClient(NotificationDto notificationDto) {
         ClientEntity clientEntity = new ClientEntity();
         clientEntity.setName(notificationDto.client().name());
@@ -44,6 +67,9 @@ public class NotificationManagement {
         clientEntity.setAddressEntity(prepareNewAddress(notificationDto));
     }
 
+    /**
+     * TODO: Write javadoc
+     */
     private AddressEntity prepareNewAddress(NotificationDto notificationDto) {
         AddressEntity addressEntity = new AddressEntity();
         addressEntity.setPostCode(notificationDto.address().postCode());

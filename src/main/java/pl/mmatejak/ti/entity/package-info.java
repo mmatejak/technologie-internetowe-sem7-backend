@@ -1,4 +1,4 @@
 /**
  * TODO: Write javadoc
  */
-package pl.mmatejak.ti;
+package pl.mmatejak.ti.entity;

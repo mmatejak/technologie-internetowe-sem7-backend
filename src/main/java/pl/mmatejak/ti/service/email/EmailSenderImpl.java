@@ -18,10 +18,16 @@ import pl.mmatejak.ti.dto.NotificationDto;
 @RequiredArgsConstructor
 public class EmailSenderImpl implements EmailSender {
 
+    /**
+     * TODO: Write javadoc
+     */
     private final JavaMailSender javaMailSender;
 
+    /**
+     * TODO: Write javadoc
+     */
     @Override
-    public void sendConfirmEmail(NotificationDto notificationDto) {
+    public void sendConfirmEmail(final NotificationDto notificationDto) {
         MimeMessage mail = javaMailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mail, true);
@@ -35,4 +41,3 @@ public class EmailSenderImpl implements EmailSender {
         javaMailSender.send(mail);
     }
 }
-

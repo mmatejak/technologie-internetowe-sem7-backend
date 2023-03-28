@@ -6,15 +6,24 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * TODO: Write javadoc
+ */
 @Getter
 @Setter
 @Entity
 @Table(name = "SERVICE")
 public class ServiceEntity extends AbstractEntity {
 
+    /**
+     * TODO: Write javadoc
+     */
     @Column
     private String type;
 
+    /**
+     * TODO: Write javadoc
+     */
     @Column
     private Long price;
 }

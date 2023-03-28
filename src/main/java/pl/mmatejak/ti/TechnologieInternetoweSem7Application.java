@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 public class TechnologieInternetoweSem7Application {
 
-    public static void main(String[] args) {
+    public static void main(final String... args) {
         SpringApplication.run(TechnologieInternetoweSem7Application.class, args);
     }
 }
