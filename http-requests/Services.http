@@ -1,4 +1,5 @@
 ### Get all notifications
 GET {{host}}/api/services/all
+Accept: application/json
 
 ###

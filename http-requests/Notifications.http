@@ -1,5 +1,6 @@
 ### Get all notifications
 GET {{host}}/api/notifications/all
+Accept: application/json
 
 ### Add notificationEntity
 POST {{host}}/api/notifications/add

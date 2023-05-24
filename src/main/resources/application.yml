@@ -9,8 +9,7 @@ spring:
         trace: true
         web-allow-others: true
   datasource:
-    url: jdbc:h2:file:~/mmatejakti;AUTO_SERVER=TRUE
-#    url: jdbc:h2:mem:mmatejakti
+    url: jdbc:h2:mem:mmatejakti
     username: sa
     password: password
     driverClassName: org.h2.Driver
