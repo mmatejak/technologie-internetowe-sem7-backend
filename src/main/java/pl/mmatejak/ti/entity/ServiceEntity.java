@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -43,6 +44,9 @@ public class ServiceEntity {
      */
     @LastModifiedDate
     private LocalDateTime lastModifiedDateTime;
+
+    @Version
+    private Long version;
 
     /**
      * TODO: Write javadoc
